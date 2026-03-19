@@ -1,0 +1,30 @@
+class A extends Thread {
+    public void run() {
+        try {
+            for(int i = 0; i <= 5; i++) {
+                System.out.println("Thread A : " + i);
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
+        }
+    }
+}
+class B extends Thread {
+    public void run() {
+        try {
+            for(int j = 0; j <= 5; j++) {
+                System.out.println("Thread B : " + j);
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
+        }
+    }
+}
+public class P12_THREAD {
+    public static void main(String[] args) {
+        A a1 = new A();
+        B b1 = new B();
+        a1.start();
+        b1.start();
+    }
+}
